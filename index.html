@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Omid Ahmadi – EEG and brain–computer interfaces</title>
-<meta name="description" content="Omid Ahmadi (formerly published as Moslem Ahmadi Arbatan): biomedical engineer working on artifact handling, low-latency decoding and compact models for dry-electrode EEG and brain–computer interfaces.">
+<meta name="description" content="Omid Ahmadi: biomedical engineer working on artifact handling, low-latency decoding and compact models for dry-electrode EEG and brain–computer interfaces.">
 <meta property="og:title" content="Omid Ahmadi – EEG and brain–computer interfaces">
 <meta property="og:description" content="Artifact handling, low-latency decoding and compact models for wearable EEG.">
 <meta property="og:type" content="website">
@@ -46,7 +46,6 @@ section{margin-top:4rem}
 .hero img{width:9.5rem;height:9.5rem;border-radius:.5rem;object-fit:cover;border:1px solid var(--line)}
 .lede{font-family:Newsreader,Georgia,serif;font-size:clamp(1.35rem,3.4vw,1.7rem);line-height:1.4;margin:1.1rem 0 1rem}
 .links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1.25rem 0 0;padding:0;list-style:none}
-.formerly{color:var(--muted);font-size:.95rem;margin-top:1.25rem}
 @media (min-width:44rem){.hero{grid-template-columns:1fr 9.5rem;gap:2.5rem}.hero img{order:2}}
 
 /* EEG trace: the artifact segment is drawn in its own colour and sits inside a marked epoch */
@@ -72,8 +71,7 @@ section{margin-top:4rem}
 .pub{padding:1.1rem 0;border-top:1px solid var(--line)}
 .pub:last-of-type{border-bottom:1px solid var(--line)}
 .cite{color:var(--muted);font-size:.95rem;margin-bottom:.6rem}
-.name-note{border-left:3px solid var(--artifact);padding:.2rem 0 .2rem 1rem;margin:0 0 1.5rem}
-.note-label{font-weight:600}
+.byline{color:var(--muted);font-size:.95rem;margin-bottom:1.25rem}
 footer{margin-top:4.5rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 </style>
 </head>
@@ -89,7 +87,6 @@ footer{margin-top:4.5rem;padding-top:1.25rem;border-top:1px solid var(--line);co
       <li><a href="mailto:omidahmadi.bci@gmail.com">omidahmadi.bci@gmail.com</a></li>
       <li><a href="https://github.com/omidahmadi-bci">GitHub</a></li>
     </ul>
-    <p class="formerly">My earlier publications appear under my former name, Moslem Ahmadi Arbatan.</p>
   </div>
   <img src="https://github.com/omidahmadi-bci.png" width="152" height="152" alt="Portrait of Omid Ahmadi">
 </header>
@@ -123,7 +120,7 @@ footer{margin-top:4.5rem;padding-top:1.25rem;border-top:1px solid var(--line);co
     </li>
     <li>
       <span class="when">2014</span>
-      <div><h3>MSc, Nuclear Engineering</h3>
+      <div><h3>MSc, Nuclear Engineering (medical radiation)</h3>
       <p>Graduate University of Advanced Technology, Kerman. Thesis: real-time tracking of moving tumours with a neuro-fuzzy system in modern radiotherapy, supervised by Ahmad Esmaili Torshabi. I compared a neural network, a neuro-fuzzy model, and a neuro-fuzzy model whose inputs were chosen by an optimisation algorithm. The last one had lower error and shorter run time.</p></div>
     </li>
     <li>
@@ -140,21 +137,22 @@ footer{margin-top:4.5rem;padding-top:1.25rem;border-top:1px solid var(--line);co
 </section>
 
 <section aria-labelledby="pubs">
-  <h2 id="pubs">Publications</h2>
-  <p class="name-note"><span class="note-label">Name note.</span> Both papers below were published under my former name, Moslem Ahmadi Arbatan. I now use Omid Ahmadi.</p>
+  <h2 id="pubs">Earlier research</h2>
+  <p>Real-time adaptive prediction for radiotherapy, under the same constraints that matter in BCI: small data, models fitted per person, and hard latency limits.</p>
+  <p class="byline">Published as Moslem Ahmadi Arbatan.</p>
 
   <article class="pub">
     <h3>A synthetic adaptive neuro-fuzzy model for tumour motion tracking</h3>
     <p class="cite">L. Ghorbanzadeh, A. Esmaili Torshabi, J. Soltani Nabipour, M. Ahmadi Arbatan. <em>Technology in Cancer Research &amp; Treatment</em>, 15(2), 334–347, 2016. <a href="https://doi.org/10.1177/1533034615571153">doi:10.1177/1533034615571153</a></p>
     <p>Seven neuro-fuzzy models, each built with a different clustering method, were combined into one model that picks the best candidate for each patient and re-selects as treatment goes on. On 20 patients it reduced tracking error against the CyberKnife system’s own model by 49.3% in typical cases and 61.2% in the hardest ones, and it ran faster than the sampling interval.</p>
-    <p><strong>Why it matters for EEG:</strong> choosing a model per person under a tight latency budget is the same problem a BCI faces when the signal drifts between sessions.</p>
+    <p><strong>Link to EEG:</strong> per-person model choice under a latency budget, as when a BCI signal drifts between sessions.</p>
   </article>
 
   <article class="pub">
     <h3>Imperialist competitive algorithm for motion dataset optimisation</h3>
     <p class="cite">A. Esmaili Torshabi, M. Ahmadi Arbatan. <em>Iranian Journal of Medical Physics</em>, 18(5), 369–375, 2021. <a href="https://doi.org/10.22038/IJMP.2020.47283.1752">doi:10.22038/IJMP.2020.47283.1752</a></p>
     <p>An optimisation algorithm chose which of nine input signals the neuro-fuzzy model should use. On the same 20 patients it lowered average error by 36% in regular breathers and 13% in irregular ones, and cut model rebuild time by about 45% and 43%. It did not help every patient, and the paper reports the two cases where it failed.</p>
-    <p><strong>Why it matters for EEG:</strong> using fewer, better inputs to get a simpler and faster model is the logic behind channel and feature selection on low-channel headsets.</p>
+    <p><strong>Link to EEG:</strong> fewer, better inputs for a faster model, the logic of channel and feature selection on low-channel headsets.</p>
   </article>
 </section>
 
