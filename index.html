@@ -33,20 +33,30 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--link);text-underline-offset:.18em}
 a:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
-main{max-width:46rem;margin:0 auto;padding:3.5rem 1.25rem 4rem}
 h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:600;line-height:1.2;margin:0}
-h1{font-size:clamp(2.6rem,7vw,3.8rem);letter-spacing:-.015em}
+h1{letter-spacing:-.015em}
 h2{font-size:1.65rem;margin:0 0 1.1rem}
 h3{font-size:1.2rem;margin:0 0 .3rem}
 p{margin:0 0 1rem;max-width:40rem}
 section{margin-top:4rem}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:1fr;gap:1.75rem;align-items:start}
-.hero img{width:9.5rem;height:9.5rem;border-radius:.5rem;object-fit:cover;border:1px solid var(--line)}
-.lede{font-family:Newsreader,Georgia,serif;font-size:clamp(1.35rem,3.4vw,1.7rem);line-height:1.4;margin:1.1rem 0 1rem}
-.links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1.25rem 0 0;padding:0;list-style:none}
-@media (min-width:44rem){.hero{grid-template-columns:1fr 9.5rem;gap:2.5rem}.hero img{order:2}}
+/* Page frame: identity column stays in view on wide screens, stacks on phones */
+.page{max-width:70rem;margin:0 auto;padding:2.5rem 1.25rem 4rem;display:grid;gap:2.5rem}
+main{min-width:0;max-width:46rem}
+.side img{display:block;width:9rem;height:9rem;border-radius:.5rem;object-fit:cover;border:1px solid var(--line)}
+.side h1{font-size:2rem;margin:1.1rem 0 .3rem}
+.role{color:var(--muted);font-size:.98rem;margin:0 0 .5rem}
+.side-h{font-weight:600;font-size:.9rem;color:var(--muted);margin:1.4rem 0 .35rem}
+.side ul{list-style:none;margin:0;padding:0}
+.side li{padding:.12rem 0}
+.nav-side{display:none}
+.updated{color:var(--muted);font-size:.9rem;font-style:italic;margin:0 0 1.5rem}
+.lede{font-family:Newsreader,Georgia,serif;font-size:clamp(1.35rem,3.4vw,1.7rem);line-height:1.4;margin:0 0 1rem}
+@media (min-width:60rem){
+  .page{grid-template-columns:15rem 1fr;gap:4.5rem;padding-top:3.5rem}
+  .side{position:sticky;top:calc(2rem + env(safe-area-inset-top,0px));align-self:start}
+  .nav-side{display:block}
+}
 
 /* EEG trace: the artifact segment is drawn in its own colour and sits inside a marked epoch */
 .trace{margin:2.75rem 0 0}
@@ -72,24 +82,33 @@ section{margin-top:4rem}
 .pub:last-of-type{border-bottom:1px solid var(--line)}
 .cite{color:var(--muted);font-size:.95rem;margin-bottom:.6rem}
 .byline{color:var(--muted);font-size:.95rem;margin-bottom:1.25rem}
-footer{margin-top:4.5rem;padding-top:1.25rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 </style>
 </head>
 <body>
-<main>
-
-<header class="hero">
-  <div>
-    <h1>Omid Ahmadi</h1>
-    <p class="lede">I work on keeping EEG signals clean enough to decode in real time, especially on dry-electrode, wearable hardware.</p>
-    <p>Biomedical engineer with more than ten years of hands-on work on clinical and laboratory devices, and a master’s degree in nuclear engineering with a thesis on real-time adaptive prediction. Since 2026 my focus is brain–computer interfaces (BCI) and EEG devices.</p>
-    <ul class="links">
-      <li><a href="mailto:omidahmadi.bci@gmail.com">omidahmadi.bci@gmail.com</a></li>
-      <li><a href="https://github.com/omidahmadi-bci">GitHub</a></li>
+<div class="page">
+<aside class="side">
+  <img src="https://github.com/omidahmadi-bci.png" width="144" height="144" alt="Portrait of Omid Ahmadi">
+  <h1>Omid Ahmadi</h1>
+  <p class="role">Biomedical engineer<br>EEG and brain–computer interfaces</p>
+  <p class="side-h">Contact</p>
+  <ul><li><a href="mailto:omidahmadi.bci@gmail.com">Email</a></li></ul>
+  <p class="side-h">Profiles</p>
+  <ul><li><a href="https://github.com/omidahmadi-bci">GitHub</a></li></ul>
+  <nav class="nav-side" aria-label="Page sections">
+    <p class="side-h">On this page</p>
+    <ul>
+      <li><a href="#focus">What I work on</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#pubs">Earlier research</a></li>
+      <li><a href="#open">Work with me</a></li>
     </ul>
-  </div>
-  <img src="https://github.com/omidahmadi-bci.png" width="152" height="152" alt="Portrait of Omid Ahmadi">
-</header>
+  </nav>
+</aside>
+
+<main>
+<p class="updated">Last updated November 2026</p>
+<p class="lede">I work on keeping EEG signals clean enough to decode in real time, especially on dry-electrode, wearable hardware.</p>
+<p>Biomedical engineer with more than ten years of hands-on work on clinical and laboratory devices, and a master’s degree in nuclear engineering with a thesis on real-time adaptive prediction. Since 2026 my focus is brain–computer interfaces (BCI) and EEG devices.</p>
 
 <figure class="trace">
   <svg viewBox="0 0 720 140" role="img" aria-labelledby="trace-title">
@@ -161,7 +180,7 @@ footer{margin-top:4.5rem;padding-top:1.25rem;border-top:1px solid var(--line);co
   <p>I am open to research collaboration, contract work in BCI and EEG, and funded PhD positions, including industry-based ones. I work remotely and am open to relocating. The quickest way to reach me is <a href="mailto:omidahmadi.bci@gmail.com">email</a>.</p>
 </section>
 
-<footer>Last updated November 2026.</footer>
 </main>
+</div>
 </body>
 </html>
